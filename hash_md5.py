@@ -10,3 +10,9 @@ class Hash:
           md5.update(chunk)
 
       return md5.hexdigest()
+  
+def from_file(filename):
+  with open(filename,"rb") as f:
+    bytes = f.read() 
+    hash = hashlib.sha256(bytes).hexdigest();
+    return hash
