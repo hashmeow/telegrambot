@@ -24,6 +24,12 @@ def handle_message(event_data):
         text = event.get("text")
 
 @app.route('/me ')
+def me_made_messages(event_data):
+    event = event_data.get("event", {})
+    channel = event.get("me")
+    user_id = event.get("user")
+    if BOT_ID != user_id:
+        text = event.get("text")
 
 
 
